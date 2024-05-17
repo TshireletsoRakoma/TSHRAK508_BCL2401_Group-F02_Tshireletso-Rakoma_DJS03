@@ -189,3 +189,17 @@ const handleBookPreviewClick = (event) => {
         listDescription.innerText = description;
     }
 };
+
+/ Event listeners
+document.querySelector('[data-search-cancel]').addEventListener('click', () => {
+    document.querySelector('[data-search-overlay]').open = false;
+});
+
+document.querySelector('[data-settings-cancel]').addEventListener('click', () => {
+    document.querySelector('[data-settings-overlay]').open = false;
+});
+
+document.querySelector('[data-header-search]').addEventListener('click', () => {
+    document.querySelector('[data-search-overlay]').open = true;
+    document.querySelector('[data-search-title]').focus();
+});
