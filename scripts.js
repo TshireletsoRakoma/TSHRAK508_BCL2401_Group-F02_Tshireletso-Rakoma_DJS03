@@ -166,3 +166,6 @@ const handleShowMoreButtonClick = () => {
     // Update remaining book count for "Show more" button
     updateShowMoreButton();
 };
+
+// Initial call to updateShowMoreButton to set the initial text
+updateShowMoreButton();
