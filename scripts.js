@@ -117,3 +117,17 @@ const filterBooks = (filters) => {
     }
     return result;
 };
+// Function to update the book list based on filtered results
+const updateBookList = (result) => {
+    page = 1;
+    matches = result;
+    const listItemsContainer = document.querySelector('[data-list-items]');
+    listItemsContainer.innerHTML = '';
+    // Show message if no books match the filter
+    const hasBooks = result.length > 0;
+    document.querySelector('[data-list-message]').classList.toggle('list__message_show', !hasBooks);
+    // Create new preview elements for filtered books
+    const newItemsFragment = document.createDocumentFragment();
+    result.slice(0, BOOKS_PER_PAGE).forEach(book => {
+        newItemsFragment.appendChild(createPreviewElement(book));
+    });
