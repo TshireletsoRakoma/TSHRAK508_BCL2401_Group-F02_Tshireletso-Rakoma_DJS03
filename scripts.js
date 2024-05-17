@@ -113,3 +113,7 @@ const filterBooks = (filters) => {
             genreMatch
         ) {
             result.push(book);
+        }
+    }
+    return result;
+};
