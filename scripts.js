@@ -15,3 +15,19 @@ const renderInitialBookList = () => {
     // Append the starting fragment to the list items container
     document.querySelector('[data-list-items]').appendChild(startingFragment);
 };
+
+// Function to create a preview element
+const createPreviewElement = ({ author, id, image, title }) => {
+    const element = document.createElement('button');
+    element.classList = 'preview';
+    element.dataset.preview = id;
+    // Populate the preview element with book details
+    element.innerHTML = `
+        <img class="preview__image" src="${image}" />
+        <div class="preview__info">
+            <h3 class="preview__title">${title}</h3>
+            <div class="preview__author">${authors[author]}</div>
+        </div>
+    `;
+    return element;
+};
