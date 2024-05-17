@@ -169,3 +169,23 @@ const handleShowMoreButtonClick = () => {
 
 // Initial call to updateShowMoreButton to set the initial text
 updateShowMoreButton();
+
+// Function to handle click event on book previews
+const handleBookPreviewClick = (event) => {
+    const previewId = event.target.closest('.preview')?.dataset.preview;
+    const activeBook = books.find(book => book.id === previewId);
+    if (activeBook) {
+        document.querySelector('[data-list-active]').open = true;
+        const { image, title, author, published, description } = activeBook;
+        const listBlur = document.querySelector('[data-list-blur]');
+        const listImage = document.querySelector('[data-list-image]');
+        const listTitle = document.querySelector('[data-list-title]');
+        const listSubtitle = document.querySelector('[data-list-subtitle]');
+        const listDescription = document.querySelector('[data-list-description]');
+        listBlur.src = image;
+        listImage.src = image;
+        listTitle.innerText = title;
+        listSubtitle.innerText = `${authors[author]} (${new Date(published).getFullYear()})`;
+        listDescription.innerText = description;
+    }
+};
