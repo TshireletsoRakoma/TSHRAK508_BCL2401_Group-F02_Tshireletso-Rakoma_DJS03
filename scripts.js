@@ -97,3 +97,19 @@ const handleSearchFormSubmit = (event) => {
     // Filter books based on search criteria and update book list
     updateBookList(filterBooks(filters));
 };
+
+// Function to filter books based on search criteria
+const filterBooks = (filters) => {
+    const result = [];
+    for (const book of books) {
+        let genreMatch = filters.genre === 'any';
+        for (const singleGenre of book.genres) {
+            if (genreMatch) break;
+            if (singleGenre === filters.genre) { genreMatch = true; }
+        }
+        if (
+            (filters.title.trim() === '' || book.title.toLowerCase().includes(filters.title.toLowerCase())) && 
+            (filters.author === 'any' || book.author === filters.author) && 
+            genreMatch
+        ) {
+            result.push(book);
