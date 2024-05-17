@@ -131,3 +131,12 @@ const updateBookList = (result) => {
     result.slice(0, BOOKS_PER_PAGE).forEach(book => {
         newItemsFragment.appendChild(createPreviewElement(book));
     });
+    // Append new preview elements to the list items container
+    listItemsContainer.appendChild(newItemsFragment);
+    // Update remaining book count for "Show more" button
+    updateShowMoreButton();
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Close search overlay
+    document.querySelector('[data-search-overlay]').open = false;
+};
