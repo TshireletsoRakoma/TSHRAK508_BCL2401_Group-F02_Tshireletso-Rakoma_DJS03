@@ -140,3 +140,6 @@ const updateBookList = (result) => {
     // Close search overlay
     document.querySelector('[data-search-overlay]').open = false;
 };
+
+// Define a variable to store the remaining count
+let remainingCount = 0;
