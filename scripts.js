@@ -211,3 +211,13 @@ document.querySelector('[data-header-settings]').addEventListener('click', () =>
 document.querySelector('[data-list-close]').addEventListener('click', () => {
     document.querySelector('[data-list-active]').open = false;
 });
+
+document.querySelector('[data-settings-form]').addEventListener('submit', handleThemeFormSubmit);
+document.querySelector('[data-search-form]').addEventListener('submit', handleSearchFormSubmit);
+document.querySelector('[data-list-button]').addEventListener('click', handleShowMoreButtonClick);
+document.querySelector('[data-list-items]').addEventListener('click', handleBookPreviewClick);
+
+// Initial setup
+renderInitialBookList();
+renderFilterOptions();
+setTheme();
