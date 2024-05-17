@@ -88,3 +88,12 @@ const handleThemeFormSubmit = (event) => {
     // Close settings overlay
     document.querySelector('[data-settings-overlay]').open = false;
 };
+
+// Function to handle form submission for search
+const handleSearchFormSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const filters = Object.fromEntries(formData);
+    // Filter books based on search criteria and update book list
+    updateBookList(filterBooks(filters));
+};
