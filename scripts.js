@@ -154,3 +154,15 @@ const updateShowMoreButton = () => {
     // Disable button if no remaining books
     showMoreButton.disabled = remainingCount < 1;
 };
+
+// Function to handle click event on "Show more" button for pagination
+const handleShowMoreButtonClick = () => {
+    const fragment = document.createDocumentFragment();
+    matches.slice(page * BOOKS_PER_PAGE, (page + 1) * BOOKS_PER_PAGE).forEach(book => {
+        fragment.appendChild(createPreviewElement(book));
+    });
+    document.querySelector('[data-list-items]').appendChild(fragment);
+    page += 1;
+    // Update remaining book count for "Show more" button
+    updateShowMoreButton();
+};
