@@ -1,39 +1,57 @@
-# DJS03 Project Brief: Book Connect - Abstractions
+# Book List Application
 
-Dive into the delightful world of "Book Connect," where literary adventures await at your fingertips! Browse, explore, and uncover your next great read from a vast, vibrant collection. Whether you're a fan of thrilling mysteries, epic fantasies, or heartwarming romances, "Book Connect" brings the magic of books directly to you. Happy reading! 
+This application allows users to browse a list of books, apply filters, and view additional details about each book.
 
-The "Book Connect" project provides an opportunity for students to refine a fully functional version of an application. The focus of this project is to enhance the code's maintainability, extendibility, and readability by applying concepts of objects and functions for abstraction. This will not only streamline future modifications but also consolidate students' understanding of higher-level programming concepts, including documentation, Styleguides, and abstraction principles.
+## Functionality
 
-![alt text](image.png)
+### Initial Setup
 
-#### Goals
+- The application loads with an initial list of books displayed.
+- Filter options for genres and authors are rendered.
+- The theme of the application (light or dark) is set based on the user's preference.
 
-- **Refactor Existing Code**: Analyse and refactor the given JavaScript and HTML code to improve its structure using objects and functions.
-- **Implement Abstraction**: Use abstraction to hide the complex reality while exposing only the necessary parts. This involves creating more generic functions that can perform tasks in a more flexible way.
-- **Documentation**: Write clear comments and documentation for the new code structure to explain the purpose and functionality of code blocks, functions, and objects.
-- **Follow Styleguides**: Adhere to established coding conventions and Styleguides to ensure code readability and maintainability.
+### Filtering Books
 
-#### Tasks
+- Users can filter books by title, author, and genre using the search form.
+- The list of books updates dynamically based on the applied filters.
 
-1. **Code Analysis**: Start by understanding the current implementation of the "Book Connect" application, including its HTML structure and JavaScript functionality.
-2. **Plan Refactoring**: Identify sections of the code that can be made more abstract and modular. Look for patterns and repetitive code that can be simplified.
-3. **Implement Abstraction**:
-   - **Objects**: Define objects to represent key elements of the application, such as books, authors, and genres. Utilise the provided data (e.g., `authors`, `genres`, `books`) to populate these objects.
-   - **Functions**: Create functions that handle repetitive tasks, such as rendering the book list, handling user interactions, and applying filters.
-4. **Enhance Functionality**: Ensure that the application remains fully functional after refactoring. Test all features to confirm that users can still search, filter, and view books as intended.
-5. **Documentation and Comments**: Throughout the refactoring process, document your code. Provide comments that explain the purpose and functionality of objects and functions.
-6. **Adherence to Styleguides**: Ensure your code follows JavaScript and HTML coding standards and best practices for readability and maintainability.
+### Pagination
 
-#### Discussion and Reflection
+- The list of books is paginated, showing a limited number of books per page.
+- Users can click on the "Show more" button to load additional books.
 
-After completing the tasks, prepare a brief presentation for your coaching group on the following:
-- The rationale behind the refactoring decisions made, including the choice of objects and functions.
-- How abstraction has made the code more maintainable and extendable.
-- Any challenges faced during the refactoring process and how they were overcome.
-- Reflections on how this exercise has deepened your understanding of JavaScript programming concepts.
+### Book Details
 
-#### Submission Guidelines
+- Clicking on a book preview reveals additional details about the book, including the book cover, title, author, publication year, and description.
 
-Submit the refactored version of the "Book Connect" application, including all HTML, CSS, and JavaScript files. Ensure that your code is well-documented and adheres to the specified Styleguides. Include a written report covering the discussion and reflection points outlined above.
+### Theme Settings
 
-Make sure to submit your project to the LMS on the DJS03 Project Tab.
+- Users can toggle between light and dark themes using the theme settings form.
+
+## Code Structure
+
+The application is structured to promote code reusability and maintainability through the use of abstractions:
+
+1. **Rendering Functions**: Abstract rendering functions are used to generate HTML elements for various components, such as book previews and filter options.
+2. **Filtering Functions**: The filtering logic is abstracted into a separate function, allowing for easy modification and extension of the filtering criteria.
+3. **Pagination Functions**: Functions for handling pagination are encapsulated, making it straightforward to manage pagination-related tasks.
+4. **Event Handlers**: Event handlers are modularized, enabling independent handling of user interactions while promoting code readability.
+5. **Theme Management**: The theme management functionality is encapsulated, facilitating easy theme switching and customization.
+
+## Usage of Abstractions
+
+- Abstraction of rendering functions reduces code duplication and promotes consistency in UI elements.
+- Separation of filtering logic into a distinct function enhances code clarity and facilitates future updates or changes to the filtering criteria.
+- Modularization of event handlers improves code organization and readability, making it easier to understand and maintain.
+- Encapsulation of pagination functions simplifies pagination management and enables seamless integration of pagination features.
+- Abstracting theme management functionality enhances maintainability and allows for easy customization of the application's appearance.
+
+## Dependencies
+
+- The application relies on data imported from './data.js'.
+- It utilizes standard HTML, CSS, and JavaScript for rendering and functionality.
+
+## Credits
+
+This application was created by [Your Name] and is provided under the [License Name] license.
+
