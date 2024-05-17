@@ -31,3 +31,23 @@ const createPreviewElement = ({ author, id, image, title }) => {
     `;
     return element;
 };
+
+// Function to render filter options for genres and authors
+const renderFilterOptions = () => {
+    renderOptions('[data-search-genres]', genres);
+    renderOptions('[data-search-authors]', authors);
+};
+
+// Function to render options for select elements
+const renderOptions = (selector, options) => {
+    const fragment = document.createDocumentFragment();
+    // Create a default "All" option
+    const defaultOption = createOptionElement('any', 'All');
+    fragment.appendChild(defaultOption);
+    // Create options for each genre or author
+    Object.entries(options).forEach(([id, name]) => {
+        fragment.appendChild(createOptionElement(id, name));
+    });
+    // Append options to the select element
+    document.querySelector(selector).appendChild(fragment);
+};
