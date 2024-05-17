@@ -436,3 +436,25 @@ option {
 .overlay[open] ~ .backdrop {
   display: block;
 }
+.preview__title {
+  margin: 0;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.preview:hover .preview__title {
+  color: #007bb5; /* Light blue text on hover */
+}
+
+/* Animation for shining effect */
+@keyframes shining {
+  0% {
+      color: #ddd;
+  }
+  50% {
+      color: #e80909; /* Keep the text color black during animation */
+  }
+  100% {
+      color: #ddd;
+  }
+}
