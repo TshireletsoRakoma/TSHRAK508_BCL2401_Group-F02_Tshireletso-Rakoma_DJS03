@@ -73,3 +73,18 @@ const setTheme = () => {
     root.style.setProperty('--color-dark', colorDark);
     root.style.setProperty('--color-light', colorLight);
 };
+
+// Function to handle form submission for theme settings
+const handleThemeFormSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const { theme } = Object.fromEntries(formData);
+    const colorDark = theme === 'night' ? '255, 255, 255' : '10, 10, 20';
+    const colorLight = theme === 'night' ? '10, 10, 20' : '255, 255, 255';
+    const root = document.documentElement;
+    // Update theme and color variables
+    root.style.setProperty('--color-dark', colorDark);
+    root.style.setProperty('--color-light', colorLight);
+    // Close settings overlay
+    document.querySelector('[data-settings-overlay]').open = false;
+};
