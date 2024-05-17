@@ -143,3 +143,14 @@ const updateBookList = (result) => {
 
 // Define a variable to store the remaining count
 let remainingCount = 0;
+
+// Function to update the remaining book count for "Show more" button
+const updateShowMoreButton = () => {
+    // Calculate the remaining count
+    remainingCount = Math.max(matches.length - (page * BOOKS_PER_PAGE), 0);
+    const showMoreButton = document.querySelector('[data-list-button]');
+    // Update button text with remaining book count
+    showMoreButton.innerText = `Show more (${remainingCount})`;
+    // Disable button if no remaining books
+    showMoreButton.disabled = remainingCount < 1;
+};
