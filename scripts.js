@@ -51,3 +51,11 @@ const renderOptions = (selector, options) => {
     // Append options to the select element
     document.querySelector(selector).appendChild(fragment);
 };
+
+// Function to create an option element
+const createOptionElement = (value, text) => {
+    const element = document.createElement('option');
+    element.value = value;
+    element.innerText = text;
+    return element;
+};
